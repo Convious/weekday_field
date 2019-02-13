@@ -80,20 +80,20 @@ class TestToggleCheckboxes(TestCase):
     def test_render_widget(self):
         f = ToggleCheckboxes(choices=DAY_CHOICES)
         self.assertHTMLEqual('''
-        <ul>
-        <li><label><input checked="checked" class=" advanced-weekday-field"
+        <ul class=" advanced-weekday-field">
+        <li><label><input checked class=" advanced-weekday-field"
         name="Test Widget Name" type="checkbox" value="0" />
         Monday</label></li>
-        <li><label><input checked="checked" class=" advanced-weekday-field"
+        <li><label><input checked class=" advanced-weekday-field"
         name="Test Widget Name" type="checkbox" value="1" />
         Tuesday</label></li>
-        <li><label><input checked="checked" class=" advanced-weekday-field"
+        <li><label><input checked class=" advanced-weekday-field"
         name="Test Widget Name" type="checkbox" value="2" />
         Wednesday</label></li>
-        <li><label><input checked="checked" class=" advanced-weekday-field"
+        <li><label><input checked class=" advanced-weekday-field"
         name="Test Widget Name" type="checkbox" value="3" />
         Thursday</label></li>
-        <li><label><input checked="checked" class=" advanced-weekday-field"
+        <li><label><input checked class=" advanced-weekday-field"
         name="Test Widget Name" type="checkbox" value="4" />
         Friday</label></li>
         <li><label><input class=" advanced-weekday-field"
@@ -106,28 +106,27 @@ class TestToggleCheckboxes(TestCase):
         ''',
             f.render("Test Widget Name", list(range(5))),
             )
-        self.maxDiff = None
         self.assertHTMLEqual('''
-        <ul>
-        <li><label><input checked="checked" class=" advanced-weekday-field"
+        <ul class=" advanced-weekday-field">
+        <li><label><input checked class=" advanced-weekday-field"
         name="Test Widget Name" type="checkbox" value="0" />
         Monday</label></li>
-        <li><label><input checked="checked" class=" advanced-weekday-field"
+        <li><label><input checked class=" advanced-weekday-field"
         name="Test Widget Name" type="checkbox" value="1" />
         Tuesday</label></li>
-        <li><label><input checked="checked" class=" advanced-weekday-field"
+        <li><label><input checked class=" advanced-weekday-field"
         name="Test Widget Name" type="checkbox" value="2" />
         Wednesday</label></li>
-        <li><label><input checked="checked" class=" advanced-weekday-field"
+        <li><label><input checked class=" advanced-weekday-field"
         name="Test Widget Name" type="checkbox" value="3" />
         Thursday</label></li>
-        <li><label><input checked="checked" class=" advanced-weekday-field"
+        <li><label><input checked class=" advanced-weekday-field"
         name="Test Widget Name" type="checkbox" value="4" />
         Friday</label></li>
-        <li><label><input checked="checked" class=" advanced-weekday-field"
+        <li><label><input checked class=" advanced-weekday-field"
         name="Test Widget Name" type="checkbox" value="5" />
         Saturday</label></li>
-        <li><label><input checked="checked" class=" advanced-weekday-field"
+        <li><label><input checked class=" advanced-weekday-field"
         name="Test Widget Name" type="checkbox" value="6" />
         Sunday</label></li>
         </ul>
@@ -135,7 +134,7 @@ class TestToggleCheckboxes(TestCase):
             f.render("Test Widget Name", ""),
             )
         self.assertHTMLEqual('''
-        <ul>
+        <ul class=" advanced-weekday-field">
         <li><label><input class=" advanced-weekday-field"
         name="Test Widget Name" type="checkbox" value="0" />
         Monday</label></li>
@@ -151,10 +150,10 @@ class TestToggleCheckboxes(TestCase):
         <li><label><input class=" advanced-weekday-field"
         name="Test Widget Name" type="checkbox" value="4" />
         Friday</label></li>
-        <li><label><input checked="checked" class=" advanced-weekday-field"
+        <li><label><input checked class=" advanced-weekday-field"
         name="Test Widget Name" type="checkbox" value="5" />
         Saturday</label></li>
-        <li><label><input checked="checked" class=" advanced-weekday-field"
+        <li><label><input checked class=" advanced-weekday-field"
         name="Test Widget Name" type="checkbox" value="6" />
         Sunday</label></li>
         </ul>

@@ -3,13 +3,14 @@ from django.utils.safestring import mark_safe
 
 from weekday_field import utils
 
+
 class ToggleCheckboxes(CheckboxSelectMultiple):
     class Media:
         js = (
             'weekday_field/js/checkbox-widget.js',
         )
 
-    def render(self, name, value, attrs=None):
+    def render(self, name, value, attrs=None, renderer=None):
         if attrs is None:
             attrs = {}
         if utils.is_str(value):
