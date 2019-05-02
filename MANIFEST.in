@@ -1,0 +1,1 @@
+recursive-include weekday_field/static *.js
