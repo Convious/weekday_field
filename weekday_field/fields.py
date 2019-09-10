@@ -33,7 +33,10 @@ class WeekdayField(models.CharField):
         return value
 
     def get_db_prep_value(self, value, connection=None, prepared=False):
-        return ",".join([str(x) for x in value or []])
+        if not utils.is_str(value):
+            value = ",".join([str(x) for x in value or []])
+        return value
+
 
 try:
     from south.modelsinspector import add_introspection_rules
