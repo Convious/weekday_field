@@ -37,9 +37,6 @@ class WeekdayField(models.CharField):
             value = ",".join([str(x) for x in value or []])
         return value
 
-    def _coerce(self,value):
-        return self.to_python(value)
-
 
 try:
     from south.modelsinspector import add_introspection_rules
