@@ -7,7 +7,7 @@ version = '0.1.0'
 
 setup_dir = os.path.dirname(os.path.abspath(__file__))
 with open(os.path.join(setup_dir, 'requirements.txt')) as req_file:
-    requirements = [lib.split('==')[0] for lib in req_file.readlines()]
+    requirements = ["django"]
 with open(os.path.join(setup_dir, 'README.md')) as readme_file:
     readme = readme_file.read()
 
